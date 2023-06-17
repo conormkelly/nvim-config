@@ -1,0 +1,55 @@
+set number
+set scrolloff=8
+set tabstop=4 softtabstop=3
+set shiftwidth=4
+set expandtab
+set smartindent
+set termguicolors
+set hls
+set ignorecase
+set smartcase
+
+" Plugins
+call plug#begin('~/.config/nvim/plugged')
+
+" Ctrl+P search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Atom theme
+Plug 'navarasu/onedark.nvim'
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
+
+" Comment toggle
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
+colorscheme onedark
+
+" Remaps
+let mapleader = " "
+" File tree
+nnoremap <leader>pv :Vex<CR>
+" Source config
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+" Command palette
+nnoremap <C-p> :Files<CR>
+" Comment toggling
+nnoremap <C-/> :Commentary<CR>
+vnoremap <C-/> :Commentary<CR>
+" Quickfix List navigation
+nnoremap <C-j> :cprev<CR>
+nnoremap <C-k> :cnext<CR>
+" Clear search highlighting on Esc
+nnoremap <Esc> <Esc>:noh<CR>
+" Overwrite maintaining paste register
+vnoremap <leader>p "_dP
+" Copy entire file to clipboard
+nnoremap <leader>C gg"+yG<C-o>
+" Move code up/down
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
