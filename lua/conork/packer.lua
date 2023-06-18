@@ -15,11 +15,7 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-    use 'navarasu/onedark.nvim'
-    require('onedark').setup {
-        style = 'darker'
-    }
-    require('onedark').load()
+    use('navarasu/onedark.nvim')
 
     use('mbbill/undotree')
 
