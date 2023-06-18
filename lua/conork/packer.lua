@@ -56,7 +56,9 @@ return require('packer').startup(function(use)
     use 'rcarriga/nvim-notify'
     vim.notify = require("notify")
 
+    use 'preservim/nerdtree'
+
+    -- TODO!
     -- https://github.com/folke/trouble.nvim
     -- https://neovimcraft.com/plugin/iamcco/markdown-preview.nvim/index.html
 end)
-
